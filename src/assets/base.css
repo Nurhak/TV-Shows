@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply w-screen h-screen;
+}
+
+#app {
+  @apply w-full h-full relative bg-black text-white;
+}
