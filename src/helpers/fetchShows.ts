@@ -1,29 +1,19 @@
 import type { Show } from "@/data/Show";
 import { getReq } from "@/lib/fetch";
-import { ref, type Ref } from "vue";
 
 const PAGE_LIMIT = 250;
 
-export const fetchRandomShows = () => {
-  const pageNumber = Math.floor(Math.random() * Math.floor(PAGE_LIMIT));
-  return fetchShows(pageNumber);
+export const fetchRandomShows = async (shuffle = false): Promise<Show[]> => {
+  let pageNumber = parseInt(localStorage.getItem("pageNumber") || "0");
+  if (!pageNumber || shuffle) {
+    pageNumber = Math.floor(Math.random() * Math.floor(PAGE_LIMIT));
+    localStorage.setItem("pageNumber", pageNumber.toString());
+  }
+  return await fetchShows(pageNumber);
 };
 
-export const fetchShows = (
-  pageNumber: number
-): {
-  shows: Ref<Show[]>;
-  error: Ref<string | null>;
-  isLoading: Ref<boolean>;
-} => {
-  const isLoading = ref(true);
-  const error = ref(null);
-  const shows = ref<Array<Show>>([]);
-  getReq<Show[]>(`/shows?page=${pageNumber}`)
-    .then((resp) => (shows.value = resp))
-    .catch((err) => (error.value = err))
-    .finally(() => (isLoading.value = false));
-  return { shows, error, isLoading };
+export const fetchShows = async (pageNumber: number): Promise<Show[]> => {
+  return await getReq<Show[]>(`/shows?page=${pageNumber}`);
 };
 
 export const mapShowsToGenres = (shows: Show[]) => {
