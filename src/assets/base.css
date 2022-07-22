@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 body {
-  @apply w-screen h-screen;
+  @apply bg-black text-white;;
 }
 
 #app {
-  @apply w-full h-full relative bg-black text-white;
+  @apply w-full h-full relative 
+}
+
+* {
+  @apply box-border;
 }

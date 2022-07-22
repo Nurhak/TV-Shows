@@ -14,7 +14,7 @@ const router = createRouter({
 describe("ShowNavbar", () => {
   it("renders properly", () => {
     const wrapper = mount(ShowNavbarVue);
-    expect(wrapper.find('[data-testid="logo')).toBeTruthy();
+    expect(wrapper.find('[data-testid="logo"]')).toBeTruthy();
   });
 
   it("routes to / on click of logo", async () => {
