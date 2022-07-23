@@ -34,7 +34,10 @@ export default {
       placeholder="Search your show..."
       type="text"
       v-model="query"
-      class="w-full h-full text-lg pr-10 text-black border-none p-2 rounded-lg bg-white active:border-yellow-500 focus:border-yellow-500 focus:outline-2 focus:outline-yellow-500"
+      :class="{
+        'rounded-b-none outline-none border-none': query.length,
+      }"
+      class="w-full h-full text-lg pr-10 text-black border-none p-2 rounded-lg bg-white focus:border-yellow-500 focus:outline-2 focus:outline-yellow-500"
     />
     <div
       v-if="query"
