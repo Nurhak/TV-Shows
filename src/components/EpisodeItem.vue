@@ -28,8 +28,12 @@ const props = defineProps<{
         </div>
       </div>
       <div class="basis-2/3 pr-3 ml-3">
-        <h2 class="font-semibold mb-1 group-hover:underline">
+        <h2
+          class="font-semibold mb-1 group-hover:underline"
+          data-testid="episode-name"
+        >
           {{ props.episode.name }}
+          {{ props.episode.season && ` | Season ${props.episode.season}` }}
         </h2>
         <span
           class="text-sm font-light max-w-xs"

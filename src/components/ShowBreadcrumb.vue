@@ -10,7 +10,7 @@ const props = defineProps<{
         :to="{
           name: 'home',
         }"
-        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+        class="inline-flex items-center text-md font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
       >
         <svg
           class="w-4 h-4 mr-2"
@@ -26,7 +26,7 @@ const props = defineProps<{
       </router-link>
     </li>
     <li>
-      <div class="flex items-center">
+      <div class="flex items-center" data-testid="current-show-name">
         <svg
           class="w-6 h-6 text-gray-400"
           fill="currentColor"

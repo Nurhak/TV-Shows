@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Show } from "@/data/Show";
-import { computed } from "vue";
+import { computed, watch } from "vue";
 import { ref } from "vue";
 import ShowItems from "./ShowItems.vue";
 import useBreakpoints from "@/composables/useBreakpoints";
