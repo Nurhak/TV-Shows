@@ -22,7 +22,7 @@ const props = defineProps<{
         />
         <div
           v-else
-          class="w-auto h-full mr-5 bg-slate-400 flex items-center justify-center"
+          class="w-auto h-full mr-5 bg-slate-400 flex items-center justify-center text-sm text-center"
         >
           {{ props.episode.name }}
         </div>

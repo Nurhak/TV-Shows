@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <navbar class="w-full bg-purple-300 p-2 flex">
+  <navbar class="w-full bg-yellow-300 p-2 flex">
     <router-link :to="{ name: 'home' }">
       <img
         data-testid="logo"

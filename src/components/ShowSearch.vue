@@ -34,7 +34,7 @@ export default {
       placeholder="Search your show..."
       type="text"
       v-model="query"
-      class="w-full h-full text-lg pr-10 text-black border-none shadow-slate-400 shadow-lg p-2 rounded-lg bg-slate-200 active:border-slate-500 focus:border-slate-500 focus:outline-2"
+      class="w-full h-full text-lg pr-10 text-black border-none p-2 rounded-lg bg-white active:border-yellow-500 focus:border-yellow-500 focus:outline-2 focus:outline-yellow-500"
     />
     <div
       v-if="query"
