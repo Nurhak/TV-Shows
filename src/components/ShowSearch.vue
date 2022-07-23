@@ -6,7 +6,7 @@ import type { Context } from "vm";
 
 export default {
   emits: ["search"],
-  setup(props: any, context: Context) {
+  setup(_props: unknown, context: Context) {
     const query = useDebouncedRef("", 200);
 
     watch(query, (newQuery) => {
