@@ -16,6 +16,7 @@ const props = defineProps<{
   <div class="mt-5 mx-5 flex justify-between">
     <ShowBreadcrumb :show-name="props.show.name" />
     <span
+      data-testid="show-details-back-button"
       class="flex flex-row gap-2 hover:text-slate-400 cursor-pointer"
       @click="router.go(-1)"
     >

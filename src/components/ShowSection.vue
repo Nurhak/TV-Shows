@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Show } from "@/data/Show";
-import { computed, watch } from "vue";
+import { computed } from "vue";
 import { ref } from "vue";
 import ShowItems from "./ShowItems.vue";
 import useBreakpoints from "@/composables/useBreakpoints";
@@ -14,7 +14,7 @@ export default {
     },
     shows: {
       type: Array,
-      required: false,
+      required: true,
     },
     isLoading: {
       type: Boolean,
@@ -80,6 +80,7 @@ export default {
       <div
         @click="previous"
         v-if="index > 0"
+        data-testid="previous"
         class="flex-1 flex cursor-pointer justify-center items-center max-w-[50px] hover:bg-slate-300 hover:bg-opacity-70 transition-colors ease-in-out duration-200 rounded-sm"
       >
         <ChevronLeftIcon class="w-16 h-16 fill-white hover:text-purple-500" />
@@ -92,6 +93,7 @@ export default {
       <div
         v-if="shows.length !== index && slicedShows.length == showSize"
         @click="next"
+        data-testid="next"
         class="flex-1 cursor-pointer flex justify-center items-center max-w-[50px] hover:bg-slate-300 hover:bg-opacity-70 transition-colors ease-in-out duration-200 rounded-sm"
       >
         <ChevronRightIcon class="w-16 h-16 fill-white" />

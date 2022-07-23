@@ -34,7 +34,9 @@ export default {
         },
       }"
     >
-      <h2 class="text-lg text-center">{{ show.name }}</h2>
+      <h2 class="text-lg text-center">
+        {{ show.name }}
+      </h2>
       <img v-if="show.image" :alt="show.name" :src="show.image.medium" />
       <div
         v-else
